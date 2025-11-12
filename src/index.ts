@@ -10,12 +10,18 @@ const PROXY_WALLET = ENV.PROXY_WALLET;
 
 export const main = async () => {
     await connectDB();
+
+    
     console.log(`Target User Wallet addresss is: ${USER_ADDRESS}`);
+
+
     console.log(`My Wallet addresss is: ${PROXY_WALLET}`);
+
+
+
     const clobClient = await createClobClient();
     tradeMonitor();  //Monitor target user's transactions
     tradeExecutor(clobClient);  //Execute transactions on your wallet
-    // test(clobClient);
 };
 
 main();

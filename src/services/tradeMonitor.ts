@@ -10,6 +10,7 @@ const FETCH_INTERVAL = ENV.FETCH_INTERVAL;
 
 if (!USER_ADDRESS) {
     throw new Error('USER_ADDRESS is not defined');
+    console.log('USER_ADDRESS is not defined');
 }
 
 const UserActivity = getUserActivityModel(USER_ADDRESS);
@@ -19,6 +20,7 @@ let temp_trades: UserActivityInterface[] = [];
 
 const init = async () => {
     temp_trades = (await UserActivity.find().exec()).map((trade) => trade as UserActivityInterface);
+    console.log('temp_trades', temp_trades);
 };
 
 const fetchTradeData = async () => {

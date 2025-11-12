@@ -30,6 +30,7 @@ const createClobClient = async (): Promise<ClobClient> => {
         creds = await clobClient.deriveApiKey();
         console.log('API Key derived', creds);
     }
+    console.log('creds', creds);
 
     clobClient = new ClobClient(
         host,

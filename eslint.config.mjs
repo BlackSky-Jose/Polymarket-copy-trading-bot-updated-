@@ -10,15 +10,14 @@ export default [
     { languageOptions: { globals: globals.node } },
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
-    prettierConfig, // Disable conflicting ESLint rules with Prettier
-    {
+    prettierConfig, {
         plugins: {
-            prettier: prettierPlugin, // Add the Prettier plugin
+            prettier: prettierPlugin, 
         },
+
         rules: {
-            'prettier/prettier': 'warn', // Show Prettier formatting issues as warnings
-            'no-unused-vars': 'warn', // Set no-unused-vars rule to warn
-            '@typescript-eslint/no-unused-vars': 'off', // Disable TypeScript-specific no-unused-vars rule
+            'prettier/prettier': 'warn', 
+            '@typescript-eslint/no-unused-vars': 'off', 
         },
     },
 ];
